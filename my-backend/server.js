@@ -1,7 +1,11 @@
 const express = require('express');
 // const mongoose = require('mongoose');
 const mongoose = require('mongoose');
+<<<<<<< HEAD
 const bcrypt = require('bcryptjs');
+=======
+const bcrypt = require('bcrypt');
+>>>>>>> aaaac12511175d1110ed7a5a80d57a1b84e22569
 const bodyParser = require('body-parser');
 const cors = require('cors'); // Import CORS
 const dotenv = require('dotenv')

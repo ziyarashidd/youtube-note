@@ -8,6 +8,10 @@
     "build": "your-build-command-here"
   },
   "dependencies": {
+<<<<<<< HEAD
+=======
+    "bcrypt": "^5.1.1",
+>>>>>>> aaaac12511175d1110ed7a5a80d57a1b84e22569
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^8.6.0",
