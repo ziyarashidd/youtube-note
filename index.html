@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome To codewith_ziya</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="shortcut icon" href="/img/channellogo.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100..900&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+  
+  .my-slider-progress {
+      background: #ccc;
+    }
+
+    .my-slider-progress-bar {
+      background: greenyellow;
+      height: 2px;
+      transition: width 400ms ease;
+      width: 0;
+    }
+
+    .col a {
+      background-color: #7e22ce;
+      border-radius: var(--bs-border-radius-pill) !important;
+      padding: .5rem !important;
+      --bs-text-opacity: 1;
+      color: rgba(var(--bs-light-rgb), var(--bs-text-opacity)) !important;
+      text-decoration: none;
+    }
+
+    .mb-2 {
+      background-color: #7e22ce;
+      --bs-text-opacity: 1;
+      color: rgba(var(--bs-light-rgb), var(--bs-text-opacity)) !important;
+      border-radius: var(--bs-border-radius) !important;
+    }
+
+    .p-3 {
+      padding: 1rem !important;
+    }
+
+    .mybtn {
+      background-color: #7e22ce;
+      text-decoration: none;
+      border-radius: var(--bs-border-radius) !important;
+      --bs-text-opacity: 1;
+      color: rgba(var(--bs-light-rgb), var(--bs-text-opacity)) !important;
+      text-align: center !important;
+    }
+    /* Default Day Mode Styles */
+body {
+  background-color: #ffffff;
+  color: #333;
+}
+
+.navSection {
+  background-color: #f8f9fa;
+}
+
+.navbar {
+  background-color: #ffffff;
+}
+
+.my-slider-progress-bar {
+  background: greenyellow;
+}
+</style>
+
+<body>
+  <!--Top navbar start-->
+  <section class="sticky-top bg-white navSection">
+    <nav class="container navbar topnav navbar-expand-lg">
+      <a class="navbar-brand ms-2 commoncolor fs-2" href="/" style="color: #7e22ce;"><b>codewith_ziya</b></a>
+      <button id="darkModeToggle" class="border border-0 bg-transparent fs-3 me-2" aria-label="Toggle Dark Mode">
+        <i class="fa-regular fa-moon" id="darkModeIcon"></i>
+      </button>
+      <button class="navbar-toggler bg-white me-2" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+        <div class="navbar-nav mx-2 my-2" id="navmenu">
+          <a class="nav-link textunderline" aria-current="page" href="/">Home</a>
+          <a class="nav-link textunderline" href="code.html">Code</a>
+          <a class="nav-link textunderline" href="video.html">Videos</a>
+          <!-- <a class="nav-link text-dark" href="#projects">Projects</a> -->
+          <a class="nav-link textunderline" href="contact.html">Contact Us</a>
+<!-- 
+          <li class="nav-item dropdown">
+            <a class="nav-link mb-2 me-2 rounded-2" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Login
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="fuser.html"><i class="fa-solid fa-user fa-shake"></i> User Login</a>
+              </li>
+              <li><a class="dropdown-item" href="admin.html"><i class="fa-solid fa-lock fa-shake"></i> Admin Login</a>
+              </li>
+            </ul>
+          </li> -->
+          <a href="https://youtube-login.vercel.app/" class=" nav-link mb-2 me-2 rounded-2 mybtn ">Login</a>
+          <a href="https://youtube-login.vercel.app/signup" class=" nav-link mb-2 me-2 rounded-2 mybtn ">Signup</a>
+
+
+        </div>
+        <form class="d-flex" id="searchForm" role="search" method="get" action="search.html">
+          <input class="form-control me-2 mx-2 " id="searchInput" name="query" type="search" placeholder="Search.."
+            aria-label="Search">
+          <button class="nav-link mb-2 me-2 rounded-2 mybtn  p-2 " onclick="performSearch()" type="submit"><i
+              class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+      </div>
+    </nav>
+    <hr />
+  </section>
+</body>
+
+</html>
+<!--Intro page start-->
+<section>
+  <div class="container">
+    <!-- top navbar start  -->
+
+
+    <!-- navbar end  -->
+    <div class="row mt-5">
+      <!-- <marquee onmouseenter="stop()" onmouseout="start()"><img src="img/circle red.png" class="img-fluid me-2" height="20px" width="20px"/>Our website is under maintenance to serve you better. Stay tuned! Some feature may not work properly.</marquee> -->
+      <!-- Left section Description start -->
+      <div class="col-sm-8 mt-3" data-aos="fade-right">
+        <h2>Hi, Welcome To</h2>
+        <h1 class="fw-bolder">ziya coding classes</h1>
+        <h1>You can Download <b class="commoncolor auto-typing"></b></h1>
+        <p>codewith_ziya is a dedicated platform where learning meets simplicity. Born out of the vision to support
+          thousands of students, we aim to provide easy access to Code for all video. Our mission is to save your time,
+          keep you focused, and help you achieve academic excellence without any hassle.</p>
+        <div class="col-4">
+          <div class="social-icon d-flex ">
+            <div class="socialicon me-2">
+              <a href="https://www.youtube.com/@codewith_ziya" target="_blank"><i
+                  class="fa-brands fa-youtube fs-2 commoncolor"></i></a>
+            </div>
+            <div class="socialicon me-2">
+              <a href="https://www.instagram.com/codewith_ziya/profilecard/?igsh=eHR6Zzc1NWxodjE4" target="_blank"><i
+                  class="fa-brands fa-instagram fs-2 commoncolor"></i></a>
+            </div>
+            <div class="socialicon">
+              <a href="https://github.com/ziyarashidd" target="_blank"><i class="fa-brands fa-github fs-2 commoncolor"></i></a>
+            </div>
+
+          </div>
+          <a href="https://www.youtube.com/@codewith_ziya" target="_blank" class="nav-link rounded-2 mybtn ">Visit Our
+            Channel</a>
+
+        </div>
+      </div>
+      <!-- left section description end -->
+      <!-- right section photo start -->
+      <div class="col-sm-4">
+        <img src="img/logo.jpg" alt="websitelogo" class="img-fluid" / style="border-radius: 50rem;">
+      </div>
+      <!-- right section end -->
+    </div>
+    <hr>
+  </div>
+</section>
+<!--Intro page end -->
+<!-- Popular Videos Section Start -->
+<section>
+  <div class="container">
+    <h2 class="text-center">Popular <span class="commoncolor" style="color: #7e22ce;">Videos</span></h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+      <div class="col">
+        <div class="card h-100 border border-0 rounded-5">
+          <img src="img\1.jpg" class="card-img-top p-3 rounded-5" alt="file">
+          <div class="card-body">
+            <h5 class="card-title">Login Form</h5>
+            <p class="card-text">Introduction to Login form</p>
+            <a href="https://youtube.com/shorts/Zn-zVnduVJ4?si=ER7VeV-XNq46-8T1" class=""> Watch Now </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 border border-0 rounded-5">
+          <img src="img\2.jpg" class="card-img-top p-3 rounded-5" alt="computer graphics">
+          <div class="card-body">
+            <h5 class="card-title">Flex box </h5>
+            <p class="card-text">in this Playlist We have cover web development .....</p>
+            <a href="https://youtube.com/shorts/nz1rYaWSRAA?si=mr5zxAh0OI9-BLhY"
+              class="rounded-pill border border-0 ">Watch Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 border border-0 rounded-5">
+          <img src="img/4.jpg" class="card-img-top p-3 rounded-5"
+            alt="computer graphics">
+          <div class="card-body">
+            <h5 class="card-title">2025 animation</h5>
+            <p class="card-text">in this Playlist We have cover web development .....</p>
+            <a href="https://youtube.com/shorts/beauxzbZICo?si=MNxj9CcoU1_MzMuX" class="rounded-pill border border-0 ">Watch Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 border border-0 rounded-5">
+          <img src="img/5.jpg" class="card-img-top p-3 rounded-5"
+            alt="computer graphics">
+          <div class="card-body">
+            <h5 class="card-title">ILU animation</h5>
+            <p class="card-text">in this Playlist We have cover web development .....</p>
+            <a href="https://youtube.com/shorts/eaVHaiiPXWU?si=Gcd9y9vgXP_6ltM6" class="rounded-pill border border-0 ">Watch Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 border border-0 rounded-5">
+          <img src="img/6.jpg" class="card-img-top p-3 rounded-5"
+            alt="computer graphics">
+          <div class="card-body">
+            <h5 class="card-title">Responsive Div</h5>
+            <p class="card-text">in this Playlist We have cover web development .....</p>
+            <a href="https://www.youtube.com/shorts/kSZIyBSh6xQ" class="rounded-pill border border-0 ">Watch Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 border border-0 rounded-5">
+          <img src="img/01.jpg" class="card-img-top p-3 rounded-5"
+            alt="computer graphics">
+          <div class="card-body">
+            <h5 class="card-title">IMG Slider</h5>
+            <p class="card-text">in this Playlist We have cover web development .....</p>
+            <a href="https://www.youtube.com/shorts/gyXDWSYbmq4" class="rounded-pill border border-0 ">Watch Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 border border-0 rounded-5">
+          <img src="img/02.jpg" class="card-img-top p-3 rounded-5"
+            alt="computer graphics">
+          <div class="card-body">
+            <h5 class="card-title">VISA CARD</h5>
+            <p class="card-text">in this Playlist We have cover web development .....</p>
+            <a href="https://www.youtube.com/shorts/gyXDWSYbmq4" class="rounded-pill border border-0 ">Watch Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 border border-0 rounded-5">
+          <img src="img/03.jpg" class="card-img-top p-3 rounded-5"
+            alt="computer graphics">
+          <div class="card-body">
+            <h5 class="card-title">FLIP CARD</h5>
+            <p class="card-text">in this Playlist We have cover web development .....</p>
+            <a href="https://www.youtube.com/shorts/B1DGaKl1ZuQ" class="rounded-pill border border-0 ">Watch Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 border border-0 rounded-5">
+          <img src="img/04.jpg" class="card-img-top p-3 rounded-5"
+            alt="computer graphics">
+          <div class="card-body">
+            <h5 class="card-title">PARALLAX WEB..</h5>
+            <p class="card-text">in this Playlist We have cover web development .....</p>
+            <a href="https://www.youtube.com/shorts/cP1c3RKMzxk" class="rounded-pill border border-0 ">Watch Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 border border-0 rounded-5">
+          <img src="img/05.jpg" class="card-img-top p-3 rounded-5"
+            alt="computer graphics">
+          <div class="card-body">
+            <h5 class="card-title">3D PRODUCT CARD</h5>
+            <p class="card-text">in this Playlist We have cover web development .....</p>
+            <a href="https://www.youtube.com/shorts/VglQlH5LDoM" class="rounded-pill border border-0 ">Watch Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 border border-0 rounded-5">
+          <img src="img/06.jpg" class="card-img-top p-3 rounded-5"
+            alt="computer graphics">
+          <div class="card-body">
+            <h5 class="card-title">GLOWING BUTTON</h5>
+            <p class="card-text">in this Playlist We have cover web development .....</p>
+            <a href="https://www.youtube.com/shorts/5QxmCrMKi9U" class="rounded-pill border border-0 ">Watch Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 border border-0 rounded-5">
+          <img src="img/07.jpg" class="card-img-top p-3 rounded-5"
+            alt="computer graphics">
+          <div class="card-body">
+            <h5 class="card-title">ANIMATED SEARCH BAR</h5>
+            <p class="card-text">in this Playlist We have cover web development .....</p>
+            <a href="https://www.youtube.com/shorts/AD6_NL_EvAU" class="rounded-pill border border-0 ">Watch Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 border border-0 rounded-5">
+          <img src="img/08.jpg" class="card-img-top p-3 rounded-5"
+            alt="computer graphics">
+          <div class="card-body">
+            <h5 class="card-title">ANIME ANIMATION</h5>
+            <p class="card-text">in this Playlist We have cover web development .....</p>
+            <a href="https://www.youtube.com/shorts/30w8UKZMEhY" class="rounded-pill border border-0 ">Watch Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 border border-0 rounded-5">
+          <img src="img/09.jpg" class="card-img-top p-3 rounded-5"
+            alt="computer graphics">
+          <div class="card-body">
+            <h5 class="card-title">FLOWER ANIMATION</h5>
+            <p class="card-text">in this Playlist We have cover web development .....</p>
+            <a href="https://www.youtube.com/shorts/EW4nD06S8ZU" class="rounded-pill border border-0 ">Watch Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 border border-0 rounded-5">
+          <img src="img/10.jpg" class="card-img-top p-3 rounded-5"
+            alt="computer graphics">
+          <div class="card-body">
+            <h5 class="card-title">3D HOVER</h5>
+            <p class="card-text">in this Playlist We have cover web development .....</p>
+            <a href="https://www.youtube.com/shorts/JKgKWa3UU0w" class="rounded-pill border border-0 ">Watch Now</a>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+<!-- Popular Videos Section End -->
+<hr />
+<!--Youtube Statics Show page -->
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-7 d-flex justify-content-center">
+        <img src="img/myimg.jpg" class="img-fluid " height="400px " width="400px" />
+      </div>
+      <div class="col-sm-5 d-flex flex-column justify-content-center">
+        <div class="d-flex justify-content-center">
+          <div class="me-2"><i class="fa-brands fa-youtube fs-1 my-auto" style="color: red;"></i></div>
+          <div>
+            <h3> Youtube Live Statics</h3>
+          </div>
+        </div>
+        <div>
+          <h1 class="text-center">Thank You So Much For Your <span style="color: red;">&#x2764;</span> &amp; Support
+          </h1>
+        </div>
+        <div class="staticsShow shadow-lg p-3 rounded-4">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--YOutube Statics page end-->
+<!-- Students Feedback Start -->
+<section>
+  <div class="container py-5">
+    <h4 class="text-center mb-4">Testimonials</h4>
+    <h1 class="text-center">Thousands of students</h1>
+    <h1 class="text-center"><span style="color: red;">&#x2764;</span> codewith_ziya</h1>
+    <div class="row commentContainer">
+      <!-- Testimonial 1 -->
+    </div>
+  </div>
+</section>
+<!-- Stduents Feedback End -->
+<hr />
+<script>
+  //Commment fetch from channel and show on site
+  const api_key = "AIzaSyAxUqjhsMszwGnlq_dtztdMTWrxz0dq1VM";
+  const channel_id = "UCyXlrubO4P1iHevEwjdSYGw";
+  const commentDiv = document.querySelector(".commentContainer");
+
+  async function fetchComments() {
+    const url = `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&allThreadsRelatedToChannelId=${channel_id}&key=${api_key}`;
+    try {
+      const resp = await fetch(url);
+      const data = await resp.json();
+      // console.log(data); 
+      showComments(data.items);
+    } catch (error) {
+      console.error("Error fetching comments:", error);
+    }
+  }
+
+  function showComments(comments) {
+    comments.forEach(item => {
+      const comment = item.snippet.topLevelComment.snippet;
+      const author = comment.authorDisplayName;
+      const text = comment.textDisplay;
+      const profileURL = comment.authorProfileImageUrl;
+      const date = new Date(comment.publishedAt).toLocaleDateString();
+      const time = new Date(comment.publishedAt).toLocaleTimeString('en-US', {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true //for 12 hour format
+      });
+      // console.log(date);
+      // console.log(time);
+
+      const commentHTML = `
+      <div class="col-md-4 mx-auto my-auto">
+          <div class="shadow p-3 rounded-4">
+              <div class="author-info">
+                  <div>
+                      <img src="${profileURL}" alt="Author Image" class="rounded-pill">
+                  </div>
+                  <div>
+                      <h5>${author}</h5>
+                      <small>${text}</small>
+                  </div>
+                  <div class="border border-1 text-center rounded-4">Published At : ${date}, ${time}</div>
+              </div>
+          </div>
+      </div>
+    `;
+      commentDiv.innerHTML += commentHTML;
+    });
+  }
+  fetchComments()
+  //Fetch Statics of channel and show
+  const staticsShow = document.querySelector(".staticsShow");
+  async function fetchYouTubeStats() {
+    const channelId = "UCyXlrubO4P1iHevEwjdSYGw";
+    const apiKey = "AIzaSyAxUqjhsMszwGnlq_dtztdMTWrxz0dq1VM";
+    const url = `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${channelId}&key=${apiKey}`;
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      console.log(data);
+      if (data.items && data.items.length > 0) {
+        const stats = data.items[0].statistics;
+        let randomLikes = Math.floor(Math.random() * 500) + 100
+        // Extract statistics
+        const subscribers = stats.subscriberCount;
+        const totalViews = stats.viewCount;
+        const totalVideos = stats.videoCount;
+        const totalComments = stats.commentCount || "Not Available";
+
+        staticsShow.innerHTML = `
+                        <h5>Total Subscriber : ${subscribers} <i class="fa-brands fa-youtube"></i></h5>
+                        <h5>Total Views : ${totalViews} <i class="fa-regular fa-eye"></i></h5>
+                        <h5>Total Videos : ${totalVideos} <i class="fa-solid fa-video"></i></h5>
+                        <h5>Recent Likes : ${randomLikes} <i class="fa-solid fa-heart"></i></h5>
+            `
+      }
+    } catch (error) {
+      console.error("Error fetching YouTube stats:", error);
+    }
+  }
+  // Call the function on page load
+  fetchYouTubeStats();
+</script>
+<!-- Footer Start -->
+<section>
+  <div class="container">
+    <div class="row d-flex justify-content-around">
+      <div class="col-sm-7 d-flex">
+        <img src="img/logo.jpg" class="img-fluid" height="60px" width="60px" />
+        <p class="my-auto">&nbsp;Copyright &copy; 2025 by codewith_ziya</p>
+      </div>
+      <div class="col-sm-5 d-flex justify-content-center my-auto">
+        <h5 class="me-2 my-auto">Follow <span class="commoncolor" style="color: #7e22ce;">Us on :</span></h5>
+        <a href="https://www.instagram.com/codewith_ziya/profilecard/?igsh=eHR6Zzc1NWxodjE4" target="_blank"><i
+            class="fa-brands fa-instagram fs-2 me-3 commoncolor"></i></a>
+        <a href="https://www.youtube.com/@codewith_ziya" target="_blank"><i
+            class="fa-brands fa-youtube fs-2 me-3 commoncolor"></i></a>
+        <a href="https://github.com/ziyarashidd" target=""><i class="fa-brands fa-github fs-2 commoncolor"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Footer End  -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.js"
+  integrity="sha512-tQQXRDB2wEmuJGtFrmmoFYzNTq8StA1XJrfO0OQbbTxd9G0CwaTDL6/C1y805IlvBVrMwOqob1kf6r/2U5XXVg=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+<script>
+  var splide = new Splide('.splide');
+  splide.mount();
+
+</script>
+<script src="script.js"></script>
+</body>
+
+</html>
+</body>

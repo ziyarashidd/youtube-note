@@ -1,0 +1,28 @@
+
+
+ /* Dark mode styles */
+ body.dark-mode {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text */
+  }
+
+  .navSection.dark-mode {
+    background-color: #1e1e1e; /* Dark navbar */
+  }
+
+  .card.dark-mode {
+    background-color: #1e1e1e; /* Dark card background */
+    color: #ffffff; /* Light card text */
+  }
+
+  .mybtn.dark-mode {
+    background-color: #3a3a3a; /* Dark button background */
+    color: #ffffff; /* Light button text */
+  }
+  .d-flex{
+    color: black;
+  }
+  .modal-title{
+    color: black;
+  }
+  
