@@ -1,28 +1,35 @@
 const express = require('express');
-// const mongoose = require('mongoose');
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const bodyParser = require('body-parser');
-const cors = require('cors'); // Import CORS
-const dotenv = require('dotenv')
+const cors = require('cors');
+const dotenv = require('dotenv');
 require('dotenv').config();
-
 
 // Create an Express app
 const app = express();
 
-
-// Enable CORS for requests from localhost:3000
+// Enable CORS for requests from localhost:3000 and your Vercel app
 app.use(cors({
-  origin: 'http://localhost:3000', // Allow only requests from this origin
-  methods: ['GET', 'POST'],       // Allow only specific HTTP methods (optional)
-  allowedHeaders: ['Content-Type', 'Authorization'] // Allow specific headers (optional)
+  origin: function (origin, callback) {
+    // List your allowed origins here (localhost and vercel app)
+    const allowedOrigins = ['http://localhost:3000', 'https://youtube-login.vercel.app'];
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: ['GET', 'POST'],       // Allow only specific HTTP methods
+  allowedHeaders: ['Content-Type', 'Authorization'] // Allow specific headers
 }));
 
 // Middleware for parsing incoming request bodies
-app.use(bodyParser.json()); // For parsing application/json
-app.use(bodyParser.urlencoded({ extended: true })); // For parsing application/x-www-form-urlencoded
-let uri = process.env.MONGODB_URL
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+let uri = process.env.MONGODB_URL;
+
 // MongoDB connection
 mongoose.connect(uri, {
   useNewUrlParser: true,
@@ -42,7 +49,6 @@ const AdminUser = mongoose.model('AdminUser', adminUserSchema);
 
 // POST route to handle login
 app.post('/admin-login', async (req, res) => {
-  // Extract username and password from the request body
   const { username, password } = req.body;
 
   if (!username || !password) {
