@@ -12,7 +12,6 @@ const app = express();
 // Enable CORS for requests from localhost:3000 and your Vercel app
 app.use(cors({
   origin: function (origin, callback) {
-    // List your allowed origins here (localhost and vercel app)
     const allowedOrigins = ['http://localhost:3000', 'https://youtube-login.vercel.app'];
     if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
       callback(null, true);
@@ -20,8 +19,9 @@ app.use(cors({
       callback(new Error('Not allowed by CORS'));
     }
   },
-  methods: ['GET', 'POST'],       // Allow only specific HTTP methods
-  allowedHeaders: ['Content-Type', 'Authorization'] // Allow specific headers
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,  // Allow cookies or credentials to be sent
 }));
 
 // Middleware for parsing incoming request bodies
@@ -56,21 +56,18 @@ app.post('/admin-login', async (req, res) => {
   }
 
   try {
-    // Find the user by the provided username
     const adminUser = await AdminUser.findOne({ username });
 
     if (!adminUser) {
       return res.status(404).json({ message: "Admin user not found" });
     }
 
-    // Compare the provided password with the stored hashed password using bcrypt
     const isMatch = await bcrypt.compare(password, adminUser.password);
 
     if (!isMatch) {
       return res.status(400).json({ message: "Incorrect password" });
     }
 
-    // If login is successful
     res.status(200).json({ message: "Login successful" });
 
   } catch (err) {
@@ -79,7 +76,7 @@ app.post('/admin-login', async (req, res) => {
   }
 });
 
-// Route for registering new admin user (for testing purposes)
+// Route for registering new admin user
 app.post('/register', async (req, res) => {
   const { username, password } = req.body;
 
@@ -88,17 +85,14 @@ app.post('/register', async (req, res) => {
   }
 
   try {
-    // Check if the admin user already exists
     const existingUser = await AdminUser.findOne({ username });
 
     if (existingUser) {
       return res.status(400).json({ message: "Username already taken" });
     }
 
-    // Hash the password before saving
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    // Create a new admin user
     const newUser = new AdminUser({ username, password: hashedPassword });
     await newUser.save();
 
