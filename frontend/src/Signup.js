@@ -15,6 +15,7 @@ const Signup = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        console.log('Form submitted with:', { username, password }); // Debugging line
 
         try {
             const response = await fetch('https://youtube-note-2.onrender.com/register', {
@@ -26,16 +27,13 @@ const Signup = () => {
             });
 
             if (!response.ok) {
-                throw new Error(`Error: ${response.status}`);
+                const errorText = await response.text(); // Get error text
+                throw new Error(`Error: ${response.status} - ${errorText}`);
             }
 
             const result = await response.json();
             alert(result.message);
-
-            // If registration is successful, redirect the user
-            if (result.success) {
-                window.location.href = 'https://youtube-note.vercel.app/'; // Redirect to external URL
-            }
+            window.location.href = 'https://youtube-note.vercel.app/';  // Redirect to external URL
         } catch (error) {
             console.error('Signup Error:', error);
             alert('Something went wrong. Please try again.');
