@@ -113,6 +113,7 @@ const Signup = () => {
                                 </div>
                                 <div className="col-md-12 d-flex justify-content-center">
                                     <button type="submit" className="mybtn text-light p-2 rounded-2 border border-0 w-100">Register</button>
+                                            window.location.href = 'https://youtube-note.vercel.app/';  // Redirect to external URL
                                 </div>
                             </form>
                             <div className="mt-3">
