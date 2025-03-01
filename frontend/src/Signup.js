@@ -31,6 +31,9 @@ const Signup = () => {
 
             const result = await response.json();
             alert(result.message);
+            // If registration is successful, redirect the user
+        if (result.success) {
+            window.location.href = 'https://youtube-note.vercel.app/'; // Redirect to external URL
         } catch (error) {
             console.error('Signup Error:', error);
             alert('Something went wrong. Please try again.');
@@ -113,7 +116,6 @@ const Signup = () => {
                                 </div>
                                 <div className="col-md-12 d-flex justify-content-center">
                                     <button type="submit" className="mybtn text-light p-2 rounded-2 border border-0 w-100">Register</button>
-                                            window.location.href = 'https://youtube-note.vercel.app/';  // Redirect to external URL
                                 </div>
                             </form>
                             <div className="mt-3">
