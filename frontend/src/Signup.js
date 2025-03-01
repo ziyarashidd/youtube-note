@@ -31,9 +31,11 @@ const Signup = () => {
 
             const result = await response.json();
             alert(result.message);
+
             // If registration is successful, redirect the user
-        if (result.success) {
-            window.location.href = 'https://youtube-note.vercel.app/'; // Redirect to external URL
+            if (result.success) {
+                window.location.href = 'https://youtube-note.vercel.app/'; // Redirect to external URL
+            }
         } catch (error) {
             console.error('Signup Error:', error);
             alert('Something went wrong. Please try again.');
